@@ -15,26 +15,19 @@
                     var text = $(this).show();
                     if (text.length === 1) {
                         searchValue = text[0];
-                        console.log('the li text', searchValue);
                     }
                 } else {
                     $(this).hide();
                 }
 
-                console.log('text after search', searchValue);
             });
-            console.log('text outside search', searchValue);
 
             $('.the-dropdown-input').on('keypress', function(e) {
-                console.log('text imediately after enter', searchValue);
                 if (e.key === 'Enter' || e.keyCode === 13) {
-                    console.log('text after enter', searchValue);
-
                     $('.the-dropdown-input').val(searchValue.innerText);
                     e.preventDefault();
                     $('.the-dropdown-list').slideUp('fast');
                 }
-                console.log('text after enter', searchValue);
             });
 
         }
